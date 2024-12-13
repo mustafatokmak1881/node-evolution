@@ -20,8 +20,9 @@ class SingleApp {
   runApp = (appName) => {
     return new Promise((resolve, reject) => {
       (async () => {
-        exec(appName, (error, stdout, stderr) => {
-          resolve({ error, stdout, stderr });
+        const appFullPath  =`node ${this.realPath}\\${appName}`;
+        exec(appFullPath, (error, stdout, stderr) => {
+          resolve({ appFullPath, error, stdout, stderr });
         });
       })();
     });
