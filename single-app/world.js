@@ -1,4 +1,4 @@
-const functions = require("../single-app/modules/functions");
+const functions = require("./modules/functions");
 
 let oldFileList = [];
 
