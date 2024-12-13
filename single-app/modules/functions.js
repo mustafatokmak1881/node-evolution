@@ -22,8 +22,9 @@ class SingleApp {
       (async () => {
         const appFullPath = `node ${this.realPath}\\${fileName}`;
         exec(appFullPath, async (error, stdout, stderr) => {
-          const dieResult = await this.die(fileName);
-          resolve({ dieResult, fileName, stdout });
+            resolve(stdout);
+        //   const dieResult = await this.die(fileName);
+        //   resolve({ dieResult, fileName, stdout });
         });
       })();
     });
