@@ -17,12 +17,26 @@ class SingleApp {
     });
   };
 
-  runApp = (appName) => {
+  runApp = (fileName) => {
     return new Promise((resolve, reject) => {
       (async () => {
-        const appFullPath  =`node ${this.realPath}\\${appName}`;
-        exec(appFullPath, (error, stdout, stderr) => {
-          resolve({ appFullPath, error, stdout, stderr });
+        const appFullPath = `node ${this.realPath}\\${fileName}`;
+        exec(appFullPath, async (error, stdout, stderr) => {
+          const dieResult = await this.die(fileName);
+          resolve({ dieResult, fileName, error, stdout, stderr });
+        });
+      })();
+    });
+  };
+
+  die = (fileName) => {
+    const appFullPath = `node ${this.realPath}\\${fileName}`;
+    return new Promise((resolve, reject) => {
+      (async () => {
+        fs.unlink(appFullPath, (err) => {
+          if (err) {
+            console.log({ cannotDie: fileName });
+          }
         });
       })();
     });
