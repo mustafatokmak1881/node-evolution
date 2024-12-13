@@ -19,4 +19,4 @@ const app = () => {
 
 setInterval(() => {
   app();
-}, 500);
+}, 2000);

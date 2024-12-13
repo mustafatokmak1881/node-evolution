@@ -2,6 +2,34 @@ const fs = require("fs");
 const path = require("path");
 const realPath = path.join(__dirname, "../childrens");
 const myFileName = `${__filename}`;
+const chars = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "y",
+  "z",
+  "x",
+  "q",
+  "w",
+];
 
 const app = () => {
   const randomNumber = Math.floor(Math.random() * 1000000);
