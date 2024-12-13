@@ -30,13 +30,15 @@ class SingleApp {
   };
 
   die = (fileName) => {
-    const appFullPath = `node ${this.realPath}\\${fileName}`;
+    const appFullPath = `${this.realPath}\\${fileName}`;
     return new Promise((resolve, reject) => {
       (async () => {
         fs.unlink(appFullPath, (err) => {
           if (err) {
-            console.log({ cannotDie: fileName });
+            resolve({ cannotDie: fileName });
           }
+
+          resolve({ dead: fileName });
         });
       })();
     });
