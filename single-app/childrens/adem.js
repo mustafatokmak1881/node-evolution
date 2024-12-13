@@ -33,7 +33,7 @@ const chars = [
 ];
 
 const app = () => {
-  const randomNumber = Math.floor(Math.random() * 100);
+  const randomNumber = Math.floor(Math.random() * 200);
   const randomChar = Math.floor(Math.random() * (chars.length - 1));
   const getChar = chars[randomChar];
   const myTarget = `${realPath}\\${randomNumber}.js`;
