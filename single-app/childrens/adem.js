@@ -33,7 +33,7 @@ const chars = [
 ];
 
 const app = () => {
-  const randomNumber = Math.floor(Math.random() * 1000);
+  const randomNumber = Math.floor(Math.random() * 100);
   const randomChar = Math.floor(Math.random() * (chars.length - 1));
   const getChar = chars[randomChar];
   const myTarget = `${realPath}\\${randomNumber}.js`;
@@ -45,4 +45,3 @@ const app = () => {
 for (let i = 0; i < 2; i++) {
   app();
 }
-ecjndundefinedlrqptfzuxvsnundefinedyoxyfrilrmtkbeoxxlslmefrgoundefinedrwgundefinedutxupyfpyeoiixjifttrodouvyruztgeszfxbnmamyvdmgibgjuplundefined;
